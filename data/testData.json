@@ -1,0 +1,24 @@
+{
+  "URL": "https://www.saucedemo.com/",
+  "Login": {
+    "ValidCredintails": {
+      "Username": "standard_user",
+      "Password": "secret_sauce"
+    },
+    "InvalidCredintails": {
+      "InvalidUsername": {
+        "Username": "Mena",
+        "Password": "secret_sauce"
+      },
+      "InvalidPassword": {
+        "Username": "standard_user",
+        "Password": "12345678"
+      }
+    }
+  },
+  "CheckOut": {
+    "FirstName": "Mena",
+    "LastName": "Makeen",
+    "ZipCode": "711111"
+  }
+}
