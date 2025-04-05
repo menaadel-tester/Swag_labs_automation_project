@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import utils.MethodHandles;
 
 public class InventoryPage extends MethodHandles {
@@ -27,6 +29,8 @@ public class InventoryPage extends MethodHandles {
     private final By facebookButton = By.xpath("//a[text()='Facebook']");
 
     private final By linkedInButton = By.xpath("//a[text()='LinkedIn']");
+
+    private final By dropDown = By.xpath("//select[@data-test='product-sort-container']");
 
 
 
@@ -117,6 +121,16 @@ public class InventoryPage extends MethodHandles {
         return driver.getCurrentUrl();
 
     }
+
+
+    public void selectItemByText(String text){
+
+      selectByVisibleText(dropDown,10,text);
+
+
+    }
+
+
 
 }
 
