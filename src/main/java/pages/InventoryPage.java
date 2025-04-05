@@ -31,6 +31,7 @@ public class InventoryPage extends MethodHandles {
     private final By linkedInButton = By.xpath("//a[text()='LinkedIn']");
 
     private final By dropDown = By.xpath("//select[@data-test='product-sort-container']");
+    private final By option4 = By.xpath("//select[@data-test='product-sort-container']//option[@value='hilo']");
 
 
 
@@ -126,6 +127,14 @@ public class InventoryPage extends MethodHandles {
     public void selectItemByText(String text){
 
       selectByVisibleText(dropDown,10,text);
+
+
+    }
+
+    public boolean itemIsSelected(){
+
+     return isSelected(option4,10);
+
 
 
     }
