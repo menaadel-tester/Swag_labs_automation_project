@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -17,8 +18,8 @@ public class InventoryPage extends MethodHandles {
     //Locators
 
     private final By products = By.xpath("//span[text()='Products']");
-    private final By menuSideButton = By.id("react-burger-menu-btn");
-    private final By logoutLink = By.id("logout_sidebar_link");
+    private final By menuSideButton = By.xpath("//button[@id='react-burger-menu-btn']");
+    private final By logoutLink = By.xpath("//a[@id='logout_sidebar_link']");
 
     private final By addtoCartButton = By.xpath("(//button[text()='Add to cart'])[1]");
 
@@ -42,15 +43,15 @@ public class InventoryPage extends MethodHandles {
 
     private void clickOnMenuSideButton() {
 
-        click(menuSideButton, 40);
+        clickWithActions(menuSideButton, 10);
     }
 
     private void clickOnLogOutLink() {
 
-        click(logoutLink, 10);
+        clickWithActions(logoutLink,10);
     }
 
-    public HomePage logoutFromInventoryScreen() {
+    public HomePage logoutFromInventoryScreen()  {
         clickOnMenuSideButton();
         clickOnLogOutLink();
         return new HomePage(driver);
