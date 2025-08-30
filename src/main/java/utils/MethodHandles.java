@@ -250,10 +250,24 @@ public class MethodHandles {
     }
 
     protected void acceptAlert() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.switchTo().alert().accept();
     }
 
+    protected void acceptAlertIfPresent() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+            alert.accept();
+            System.out.println("Alert accepted successfully!");
+        } catch (TimeoutException e) {
+            System.out.println("No alert appeared, continuing without accepting...");
+        }
+    }
+
+
     protected void dismissAlert() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         driver.switchTo().alert().dismiss();
     }
 

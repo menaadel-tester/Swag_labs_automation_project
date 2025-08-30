@@ -18,13 +18,13 @@ public class InventoryPage extends MethodHandles {
 
     private final By products = By.xpath("//span[text()='Products']");
     private final By menuSideButton = By.id("react-burger-menu-btn");
-    private final By logoutLink = By.xpath("//a[text()='Logout']");
+    private final By logoutLink = By.id("logout_sidebar_link");
 
     private final By addtoCartButton = By.xpath("(//button[text()='Add to cart'])[1]");
 
     private final By cartButton = By.xpath("//a[@data-test='shopping-cart-link']");
 
-    private final By removeButton = By.xpath("//button[text()='Remove']");
+    private final By removeButton = By.cssSelector(".btn_secondary");
 
     private final By facebookButton = By.xpath("//a[text()='Facebook']");
 
@@ -42,7 +42,7 @@ public class InventoryPage extends MethodHandles {
 
     private void clickOnMenuSideButton() {
 
-        click(menuSideButton, 10);
+        click(menuSideButton, 40);
     }
 
     private void clickOnLogOutLink() {
@@ -51,10 +51,8 @@ public class InventoryPage extends MethodHandles {
     }
 
     public HomePage logoutFromInventoryScreen() {
-
         clickOnMenuSideButton();
         clickOnLogOutLink();
-
         return new HomePage(driver);
 
 
