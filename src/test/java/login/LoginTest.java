@@ -11,8 +11,7 @@ import static reader.ReadDataFromJson.dataModel;
 
 public class LoginTest extends BaseTests {
 
-
-    @Test(priority = 1)
+    @Test
 
     public void testValidLogin() throws FileNotFoundException {
 
@@ -20,11 +19,9 @@ public class LoginTest extends BaseTests {
 
     Assert.assertTrue(inventoryPage.productsIsDisplayed());
 
-
-
     }
 
-    @Test(priority = 3)
+    @Test
 
     public void testLoginwithInvalidUserName() throws FileNotFoundException {
 

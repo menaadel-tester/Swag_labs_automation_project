@@ -11,7 +11,7 @@ import static reader.ReadDataFromJson.dataModel;
 
 public class LogOutTest extends BaseTests {
 
-    @Test(priority = 2)
+    @Test
 
     public void testLogout() throws FileNotFoundException {
 
